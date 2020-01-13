@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TitledPane fx:id="storyPane" animated="false" stylesheets="@style.css" text="untitled 1" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group5.controller.mainAppControllers.StoryItemController">
+   <content>
+      <ScrollPane fitToWidth="true" minHeight="337.0" minWidth="600.0" prefViewportHeight="337.0" prefViewportWidth="600.0">
+         <content>
+            <AnchorPane fx:id="storyAnchor" minHeight="337.0" minWidth="600.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <children>
+                  <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="15.0" prefHeight="15.0" style="-fx-background-color: #d8d8d8;" VBox.vgrow="NEVER">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="15.0" text="Not Started" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <VBox fx:id="notStartedList" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="NEVER" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="15.0" prefHeight="15.0" style="-fx-background-color: #e8e8e8;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" text="In Progress" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <VBox fx:id="inProgressList" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="15.0" prefHeight="15.0" style="-fx-background-color: #d8d8d8;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="15.0" text="Verify" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <VBox fx:id="verifyList" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="15.0" prefHeight="15.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="15.0" text="Done" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <VBox fx:id="doneList" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="btnTaskAdd" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnAddTask" prefHeight="30.0" prefWidth="30.0">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="ToolbarQuickAdd.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnRemoveTask" prefHeight="30.0" prefWidth="30.0">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="ToolbarQuickRemove.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets left="8.0" right="8.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnTaskEdit" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnEditTask" prefHeight="30.0" prefWidth="30.0">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="toolbar_edit.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <ImageView fx:id="SBImage" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" top="18.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Rectangle fx:id="doneBar" arcWidth="5.0" fill="#25c916" height="21.0" stroke="BLACK" strokeType="INSIDE" width="60.0" />
+                                    <Rectangle fx:id="inProgBar" arcWidth="5.0" fill="#eef223" height="21.0" stroke="BLACK" strokeType="INSIDE" width="60.0" />
+                                    <Rectangle fx:id="notStartedBar" arcWidth="5.0" fill="#c71616" height="21.0" stroke="BLACK" strokeType="INSIDE" width="60.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="8.0" right="8.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </content>
+         <padding>
+            <Insets left="5.0" right="20.0" />
+         </padding>
+      </ScrollPane>
+   </content>
+</TitledPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<MenuBar maxHeight="25.0" minHeight="25.0" prefHeight="25.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group5.controller.mainAppControllers.MenuBarController">
+   <menus>
+       <Menu mnemonicParsing="false" text="File">
+           <items>
+               <Menu mnemonicParsing="false" text="New...">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#createProject" text="Project" />
+                  <MenuItem mnemonicParsing="false" onAction="#createTeam" text="Team" />
+                       <MenuItem mnemonicParsing="false" onAction="#createPerson" text="Person" />
+                       <MenuItem mnemonicParsing="false" onAction="#createSkill" text="Skill" />
+                       <MenuItem mnemonicParsing="false" onAction="#createRelease" text="Release" />
+                  <MenuItem mnemonicParsing="false" onAction="#createStory" text="Story" />
+                  <MenuItem mnemonicParsing="false" onAction="#createBacklog" text="Backlog" />
+                  <MenuItem mnemonicParsing="false" onAction="#createSprint" text="Sprint" />
+                   </items>
+               </Menu>
+               <MenuItem fx:id="directAddMenuItem" mnemonicParsing="false" onAction="#btnClickDirectAdd" text="Direct Add" />
+               <MenuItem mnemonicParsing="false" onAction="#btnClickOrganization" text="Organisation" />
+               <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#btnClickOpen" text="Open…" />
+               <SeparatorMenuItem mnemonicParsing="false" />
+               <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#btnClickSave" text="Save" />
+               <MenuItem mnemonicParsing="false" onAction="#btnClickSaveAs" text="Save As…" />
+            <MenuItem mnemonicParsing="false" onAction="#btnClickReport" text="Report..." />
+               <MenuItem mnemonicParsing="false" onAction="#btnRevert" text="Revert" />
+               <SeparatorMenuItem mnemonicParsing="false" />
+               <MenuItem mnemonicParsing="false" onAction="#btnQuitClick" text="Quit" />
+           </items>
+       </Menu>
+      <Menu fx:id="editMenu" mnemonicParsing="false" text="Edit">
+         <items>
+            <MenuItem fx:id="undoMenuItem" mnemonicParsing="false" onAction="#btnUndoClick" text="Undo" />
+            <MenuItem fx:id="redoMenuItem" mnemonicParsing="false" onAction="#btnRedoClick" text="Redo" />
+            <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#btnDelete" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="editMenuItem" mnemonicParsing="false" onAction="#editItem" text="Edit Item" />
+             <SeparatorMenuItem mnemonicParsing="false" />
+             <MenuItem fx:id="dependantsMenuItem" mnemonicParsing="false" onAction="#launchDependantsDialog" text="Edit Story Dependencies" />
+         </items>
+      </Menu>
+      <Menu mnemonicParsing="false" text="Display">
+         <items>
+            <CheckMenuItem fx:id="showListMenuItem" mnemonicParsing="false" onAction="#showHideList" text="Show/Hide List" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <CheckMenuItem fx:id="showProjectsMenuItem" mnemonicParsing="false" onAction="#btnShowProjects" text="Show Projects" />
+            <CheckMenuItem fx:id="showTeamsMenuItem" mnemonicParsing="false" onAction="#btnShowTeams" text="Show Teams" />
+            <CheckMenuItem fx:id="showPeopleMenuItem" mnemonicParsing="false" onAction="#btnShowPeople" text="Show People" />
+            <CheckMenuItem fx:id="showSkillsMenuItem" mnemonicParsing="false" onAction="#btnShowSkills" text="Show Skills" />
+            <CheckMenuItem fx:id="showReleasesMenuItem" mnemonicParsing="false" onAction="#btnShowReleases" text="Show Releases" />
+            <CheckMenuItem fx:id="showStoriesMenuItem" mnemonicParsing="false" onAction="#btnShowStories" text="Show Stories" />
+            <CheckMenuItem fx:id="showBacklogsMenuItem" mnemonicParsing="false" onAction="#btnShowBacklogs" text="Show Backlogs" />
+            <CheckMenuItem fx:id="showSprintsMenuItem" mnemonicParsing="false" onAction="#btnShowSprints" text="Show Sprints" />
+         </items>
+      </Menu>
+      <!--<Menu mnemonicParsing="false" text="Help">-->
+         <!--<items>-->
+            <!--<MenuItem mnemonicParsing="false" text="About MyHelloApp" />-->
+         <!--</items>-->
+      <!--</Menu>-->
+   </menus>
+</MenuBar>

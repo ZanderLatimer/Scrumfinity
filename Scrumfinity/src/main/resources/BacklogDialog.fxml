@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group5.controller.dialogControllers.BacklogDialogController">
+    <children>
+        <HBox alignment="BOTTOM_LEFT">
+            <children>
+                <Label prefHeight="25.0" prefWidth="135.0" text="Backlog Label:*">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="backlogLabelField" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="200.0" promptText="Unique label of backlog">
+               <tooltip>
+                  <Tooltip text="Label should be 20 characters or less or application may not behave as expected." />
+               </tooltip></TextField>
+            </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER_LEFT">
+            <children>
+                <Label prefHeight="25.0" prefWidth="135.0" text="Backlog Name:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="backlogNameField" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="200.0" promptText="Name of backlog" />
+            </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+        </HBox>
+        <HBox>
+            <children>
+                <Label prefHeight="25.0" prefWidth="135.0" text="Description:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+            <TextArea fx:id="backlogDescriptionField" prefHeight="125.0" prefWidth="300.0" promptText="Description of backlog" wrapText="true" />
+            </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+        </HBox>
+        <HBox>
+            <children>
+                <Label prefHeight="25.0" prefWidth="135.0" text="Product Owner:*">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </Label>
+                <ComboBox fx:id="backlogProductOwnerCombo" maxHeight="1.8" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="Available POs">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></ComboBox>
+                <Button fx:id="btnNewProductOwner" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#addNewProductOwner" prefHeight="25.0" prefWidth="25.0">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="ToolbarQuickAdd.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <HBox.margin>
+                        <Insets left="10.0" right="5.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="btnEditProductOwner" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#editProductOwner" prefHeight="25.0" prefWidth="25.0">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="toolbar_edit.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+            <VBox.margin>
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </HBox>
+      <HBox>
+         <children>
+            <Label prefHeight="25.0" prefWidth="135.0" text="Estimate Scale:*">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="backlogScaleCombo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="Available Scales">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ComboBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="25.0" text="Available Stories:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Button fx:id="btnNewStory" maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#addNewStory" prefHeight="20.0" prefWidth="20.0">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="ToolbarQuickAdd.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="44.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ListView fx:id="availableStoriesList" prefHeight="200.0" prefWidth="200.0" stylesheets="@ListStyle.css" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <Button fx:id="btnAddStory" maxHeight="25.0" maxWidth="60.0" minHeight="25.0" minWidth="60.0" mnemonicParsing="false" onAction="#btnAddStoryClick" prefHeight="25.0" prefWidth="60.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="RightArrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnRemoveStory" maxHeight="25.0" maxWidth="60.0" minHeight="25.0" minWidth="60.0" mnemonicParsing="false" onAction="#btnRemoveStoryClick" prefHeight="25.0" prefWidth="60.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="LeftArrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="25.0" text="In Backlog:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ListView fx:id="allocatedStoriesList" prefHeight="173.0" prefWidth="200.0" stylesheets="@ListStyle.css">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></ListView>
+                  <ComboBox fx:id="storyEstimateCombo" prefHeight="25.0" prefWidth="200.0" promptText="Estimate">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin></ComboBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <Button fx:id="btnIncreasePriority" maxHeight="35.0" maxWidth="30.0" minHeight="35.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnIncreasePriorityClick" prefHeight="35.0" prefWidth="30.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="UpArrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnDecreasePriority" maxHeight="35.0" maxWidth="30.0" minHeight="35.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnDecreasePriorityClick" prefHeight="35.0" prefWidth="30.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="DownArrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </HBox>
+        <HBox fx:id="btnContainer" alignment="CENTER_LEFT" spacing="10.0">
+            <children>
+                <Label prefHeight="25.0" prefWidth="330.0" text="* Fields cannot be empty.">
+                    <font>
+                        <Font name="System Italic" size="13.0" />
+                    </font>
+                </Label>
+                <Button fx:id="btnConfirm" mnemonicParsing="false" onAction="#btnConfirmClick" prefHeight="25.0" prefWidth="85.0" text="Save" />
+                <Button fx:id="btnCancel" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCancelClick" prefHeight="25.0" prefWidth="85.0" text="Cancel" />
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+                <Insets top="5.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</VBox>

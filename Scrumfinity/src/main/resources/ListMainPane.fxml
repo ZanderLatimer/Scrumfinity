@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane fx:id="splitPane" dividerPositions="0.30094043887147337" minHeight="375.0" minWidth="600.0" prefHeight="375.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group5.controller.mainAppControllers.ListMainPaneController">
+   <items>
+      <AnchorPane fx:id="listViewPane" maxHeight="1.7976931348623157E308" maxWidth="200.0" minHeight="373.0" minWidth="150.0" prefHeight="373.0" prefWidth="150.0" SplitPane.resizableWithParent="false">
+         <children>
+            <Label fx:id="listViewLabel" maxWidth="200.0" minHeight="20.0" prefHeight="20.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="4.0" />
+            <Button maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#btnClickDirectAdd" prefHeight="22.0" prefWidth="22.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="4.0">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="ToolbarQuickAdd.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ListView fx:id="listView" layoutX="-6.0" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="200.0" minHeight="353.0" minWidth="150.0" prefHeight="353.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" stylesheets="@ListStyle.css" />
+            <ToggleButton fx:id="temporal" layoutX="118.0" layoutY="4.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#btnClickTemporalSort" prefHeight="20.0" prefWidth="22.0">
+               <graphic>
+                  <ImageView fx:id="sortImage" fitHeight="16.0" fitWidth="16.0">
+                     <image>
+                        <Image url="ASortButton.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="Basic Info">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="595.0">
+                           <children>
+                              <ScrollPane prefWidth="595.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <TextFlow fx:id="displayTextFlow" lineSpacing="5.0" prefWidth="595.0">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </TextFlow>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Scrum Board">
+                  <content>
+                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                         <children>
+                             <fx:include fx:id="scrumBoard" source="ScrumBoard.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                         </children>
+                      </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Burndown Chart">
+                    <content>
+                      <AnchorPane minHeight="388" minWidth="600" prefWidth="595.0">
+                           <children>
+                              <fx:include fx:id="burndown" source="Burndown.fxml" />
+                           </children>
+                           <effect>
+                              <Blend />
+                           </effect>
+                      </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

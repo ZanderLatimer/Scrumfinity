@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ToolBar prefHeight="40.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group5.controller.mainAppControllers.ToolBarController">
+  <items>
+    <Button fx:id="saveButton" mnemonicParsing="false" onAction="#btnSaveClick">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="toolbar_save.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Save" />
+         </tooltip></Button>
+      <Button fx:id="saveAsButton" mnemonicParsing="false" onAction="#btnSaveAsClick">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="toolbar_saveas.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Save As" />
+         </tooltip></Button>
+      <Button fx:id="loadButton" mnemonicParsing="false" onAction="#btnLoadClick">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="toolbar_load.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Load" />
+         </tooltip></Button>
+      <Separator orientation="VERTICAL" />
+      <Button fx:id="undoButton" mnemonicParsing="false" onAction="#btnUndoClick">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="toolbar_undo.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Undo" />
+         </tooltip></Button>
+      <Button fx:id="redoButton" mnemonicParsing="false" onAction="#btnRedoClick">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="toolbar_redo.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Redo" />
+         </tooltip></Button>
+      <Separator orientation="VERTICAL" />
+      <Button fx:id="editButton" mnemonicParsing="false" onAction="#btnEditClick">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="toolbar_edit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Edit Item" />
+         </tooltip></Button>
+      <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#btnDeleteClick">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="toolbar_delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Delete Item" />
+         </tooltip></Button>
+      <Separator orientation="VERTICAL" />
+      <Button fx:id="dependenciesButton" mnemonicParsing="false" onAction="#btnDependenciesClick">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="toolbar_dependencies.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Story Dependencies" />
+         </tooltip></Button>
+  </items>
+</ToolBar>

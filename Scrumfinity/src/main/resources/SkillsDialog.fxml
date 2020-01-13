@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.group5.controller.dialogControllers.SkillsDialogController">
+    <children>
+        <HBox alignment="CENTER_LEFT">
+            <children>
+                <Label prefHeight="25.0" prefWidth="125.0" text="Skill Label:*">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="skillLabel" alignment="TOP_LEFT" prefWidth="200.0" promptText="Unique skill label">
+               <tooltip>
+                  <Tooltip text="Label should be 20 characters or less or application may not behave as expected." />
+               </tooltip></TextField>
+            </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+        </HBox>
+        <HBox>
+            <children>
+                <Label prefHeight="25.0" prefWidth="125.0" text="Description:" wrapText="true">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="skillDescription" prefHeight="100.0" prefWidth="250.0" promptText="Short description of skill" wrapText="true" />
+            </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+        </HBox>
+      <HBox fx:id="btnContainer" spacing="10.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="185.0" text="* Fields cannot be empty.">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="skillCreation" mnemonicParsing="false" onAction="#SkillCreation" prefHeight="25.0" prefWidth="85.0" text="Save">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="cancelCreation" mnemonicParsing="false" onAction="#CancelCreation" prefHeight="25.0" prefWidth="85.0" text="Cancel" />
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</VBox>
